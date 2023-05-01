@@ -18,5 +18,8 @@
   "homepage": "https://github.com/Naztex/RSS-Virtual-Keyboard#readme",
   "devDependencies": {
     "eslint": "^8.39.0"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1"
   }
 }

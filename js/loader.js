@@ -12,7 +12,7 @@ export function loader () {
 	textArea.classList.add('text');
 	keyboard.classList.add('keyboard');
 	description.classList.add('description');
-	description.innerText = 'Клавиатура создана в операционной системе Windows. Для переключения языка комбинация: левыe shift + alt'
+	description.innerText = 'Клавиатура создана в операционной системе Windows. Для переключения языка комбинация: левыe ctrl + alt'
 	title.innerText = 'RSS Virtual Keyboard';
 	page.append(wrapper);
 	wrapper.append(title);

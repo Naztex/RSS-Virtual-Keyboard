@@ -50,6 +50,8 @@ body {
 }
 
 .key {
+	position: relative;
+	z-index: 100;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -76,9 +78,9 @@ body {
 	background-color: #292929;
 }
 
-/* .key:active {
+.key:active {
 	background-color: #FDDCC4;
-} */
+}
 
 .active {
 	background-color: #FDDCC4;

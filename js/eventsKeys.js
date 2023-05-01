@@ -1,25 +1,25 @@
 export function downKey (event) {
-	const keyDown = event.code;
+	let keyDown = event.code;
 	const keyPress = document.querySelectorAll('.key');
 	const textarea = document.querySelector('.text');
 
 			keyPress.forEach((elem) => {
 				if (elem.id === keyDown) {
 					elem.classList.add('active');
-					if (event.code === 'AltLeft' || event.code === 'AltRight' ||
-					event.code === 'ControlLeft' || event.code === 'ControlRight' ||
-					event.code === 'ShiftLeft' || event.code === 'ShiftRight' || 
-					event.code === 'CapsLock' || event.code === 'Backspace' || event.code === 'MetaLeft' || 
-					event.code === 'MetaRight' || event.code === 'Enter' || 
-					event.code === 'ArrowUp' || event.code === 'ArrowDown'|| 
-					event.code === 'ArrowLeft' || event.code === 'ArrowRight' || 
-					event.code === 'Delete' || event.code === 'Space') {
+					if (keyDown === 'AltLeft' || keyDown === 'AltRight' ||
+					keyDown === 'ControlLeft' || keyDown === 'ControlRight' ||
+					keyDown === 'ShiftLeft' || keyDown === 'ShiftRight' || 
+					keyDown === 'CapsLock' || keyDown === 'Backspace' || event.code === 'MetaLeft' || 
+					keyDown === 'MetaRight' || keyDown === 'Enter' || 
+					keyDown === 'ArrowUp' || keyDown === 'ArrowDown'|| 
+					keyDown === 'ArrowLeft' || keyDown === 'ArrowRight' || 
+					keyDown === 'Delete' || keyDown === 'Space') {
 						const shiftUp = document.querySelectorAll('.shift_up');
 						const shiftDown = document.querySelectorAll('.shift_down');
 						const capsKey = document.querySelector('#CapsLock');
 						const capsKeys = document.querySelectorAll('.caps');
 						const shiftCapsKey = document.querySelectorAll('.shift_caps');
-						if (event.code === 'CapsLock') {
+						if (keyDown === 'CapsLock') {
 							if (event.getModifierState('CapsLock')) {
 								capsKey.classList.add('active');
 								shiftUp.forEach((elem) => {
@@ -39,7 +39,7 @@ export function downKey (event) {
 							}
 						}
 						
-						if(event.code === 'ShiftLeft' || event.code === 'ShiftRight') {
+						if(keyDown === 'ShiftLeft' || keyDown === 'ShiftRight') {
 							shiftDown.forEach((elem) => {
 								elem.classList.remove('hidden');
 							})
@@ -48,7 +48,7 @@ export function downKey (event) {
 							})
 						}
 						
-						if(((event.code === 'ShiftLeft' || event.code === 'ShiftRight') && event.getModifierState('CapsLock'))) {
+						if(((keyDown === 'ShiftLeft' || keyDown === 'ShiftRight') && event.getModifierState('CapsLock'))) {
 							capsKeys.forEach((elem) => {
 								elem.classList.add('hidden');
 							})
@@ -61,17 +61,20 @@ export function downKey (event) {
 						}
 						textarea.focus();
 						return;
-					} else if (!(event.code === 'AltLeft' || event.code === 'AltRight' ||
-					event.code === 'ControlLeft' || event.code === 'ControlRight' ||
-					event.code === 'ShiftLeft' || event.code === 'ShiftRight' || 
-					event.code === 'CapsLock' || event.code === 'Backspace' || event.code === 'MetaLeft' || 
-					event.code === 'MetaRight' || event.code === 'Enter' || 
-					event.code === 'ArrowUp' || event.code === 'ArrowDown'|| 
-					event.code === 'ArrowLeft' || event.code === 'ArrowRight' || 
-					event.code === 'Delete' || event.code === 'Space')) {
+					} else if (!(keyDown === 'AltLeft' || keyDown === 'AltRight' ||
+					keyDown === 'ControlLeft' || keyDown === 'ControlRight' ||
+					keyDown === 'ShiftLeft' || keyDown === 'ShiftRight' || 
+					keyDown === 'CapsLock' || keyDown === 'Backspace' || keyDown === 'MetaLeft' || 
+					keyDown === 'MetaRight' || keyDown === 'Enter' || 
+					keyDown === 'ArrowUp' || keyDown === 'ArrowDown'|| 
+					keyDown === 'ArrowLeft' || keyDown === 'ArrowRight' || 
+					keyDown === 'Delete' || keyDown === 'Space')) {
 						event.preventDefault();
-						if (event.code === 'Tab') {
+						if (keyDown === 'Tab') {
 							textarea.value += '    ';
+						} else if (keyDown === 'Space') {
+							textarea.focus();
+							textarea.value += '&nbsp';
 						} else {
 							textarea.value += elem.innerText;
 						}
@@ -81,18 +84,17 @@ export function downKey (event) {
 		}
 
 export function upKey (event) {
-	const keyDown = event.code;
+	let keyDown = event.code;
 	const keyPress = document.querySelectorAll('.key');
 	keyPress.forEach((elem) => {
 		if(elem.id === keyDown) {
-			if (event.code === 'CapsLock') {
+			if (keyDown === 'CapsLock') {
 				return;
 			}
 			elem.classList.remove('active');
-			if(event.code === 'ShiftLeft' || event.code === 'ShiftRight') {
+			if(keyDown === 'ShiftLeft' || keyDown === 'ShiftRight') {
 				const shiftUp = document.querySelectorAll('.shift_up');
 				const shiftDown = document.querySelectorAll('.shift_down');
-				const capsKey = document.querySelector('#CapsLock');
 				const capsKeys = document.querySelectorAll('.caps');
 				const shiftCapsKey = document.querySelectorAll('.shift_caps');
 				if (event.getModifierState('CapsLock')) {
@@ -113,4 +115,18 @@ export function upKey (event) {
 			}
 		}
 	})
+}
+
+export function handleClick(event) {
+  const eventMouse = new KeyboardEvent('keydown', {
+    code: event.target.id,
+  });
+	downKey (eventMouse)
+}
+
+export function handleKeyUp(event) {
+  const eventMouse = new KeyboardEvent('keyup', {
+    code: event.target.id,
+  });
+	upKey (eventMouse)
 }

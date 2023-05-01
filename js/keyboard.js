@@ -95,7 +95,8 @@ export const KEYBOARD = [
 		rusShift: 'Backspace',
 		eng: 'Backspace',
 		engShift: 'Backspace',
-		codeKey: 'Backspace'
+		codeKey: 'Backspace',
+		Backspace: '8'
 	},
 	{
 		rus: 'Tab',
@@ -200,14 +201,16 @@ export const KEYBOARD = [
 		rusShift: 'Del',
 		eng: 'Del',
 		engShift: 'Del',
-		codeKey: 'Delete'
+		codeKey: 'Delete',
+		Delete: '46'
 	},
 	{
 		rus: 'CapsLock',
 		rusShift: 'CapsLock',
 		eng: 'CapsLock',
 		engShift: 'CapsLock',
-		codeKey: 'CapsLock'
+		codeKey: 'CapsLock',
+		CapsLock: '20'
 	},
 	{
 		rus: 'ф',
@@ -291,14 +294,16 @@ export const KEYBOARD = [
 		rusShift: 'Enter',
 		eng: 'Enter',
 		engShift: 'Enter',
-		codeKey: 'Enter'
+		codeKey: 'Enter',
+		Enter: '13'
 	},
 	{
 		rus: 'Shift',
 		rusShift: 'Shift',
 		eng: 'Shift',
 		engShift: 'Shift',
-		codeKey: 'ShiftLeft'
+		codeKey: 'ShiftLeft',
+		ShiftLeft: '16'
 	},
 	{
 		rus: 'я',
@@ -375,76 +380,87 @@ export const KEYBOARD = [
 		rusShift: '▲',
 		eng: '▲',
 		engShift: '▲',
-		codeKey: 'ArrowUp'
+		codeKey: 'ArrowUp',
+		ArrowUp: '38'
 	},
 	{
 		rus: 'Shift',
 		rusShift: 'Shift',
 		eng: 'Shift',
 		engShift: 'Shift',
-		codeKey: 'ShiftRight'
+		codeKey: 'ShiftRight',
+		ShiftRight: '16'
 	},
 	{
 		rus: 'Ctrl',
 		rusShift: 'Ctrl',
 		eng: 'Ctrl',
 		engShift: 'Ctrl',
-		codeKey: 'ControlLeft'
+		codeKey: 'ControlLeft',
+		ControlLeft: '17'
 	},
 	{
 		rus: 'Win',
 		rusShift: 'Win',
 		eng: 'Win',
 		engShift: 'Win',
-		codeKey: 'MetaLeft'
+		codeKey: 'MetaLeft',
+		MetaLeft: '91'
 	},
 	{
 		rus: 'Alt',
 		rusShift: 'Alt',
 		eng: 'Alt',
 		engShift: 'Alt',
-		codeKey: 'AltLeft'
+		codeKey: 'AltLeft',
+		AltLeft: '18'
 	},
 	{
 		rus: ' ',
 		rusShift: ' ',
 		eng: ' ',
 		engShift: ' ',
-		codeKey: 'Space'
+		codeKey: 'Space',
+		Space: '32'
 	},
 	{
 		rus: 'Alt',
 		rusShift: 'Alt',
 		eng: 'Alt',
 		engShift: 'Alt',
-		codeKey: 'AltRight'
+		codeKey: 'AltRight',
+		AltRight: '18'
 	},
 	{
 		rus: '◄',
 		rusShift: '◄',
 		eng: '◄',
 		engShift: '◄',
-		codeKey: 'ArrowLeft'
+		codeKey: 'ArrowLeft',
+		ArrowLeft: '37'
 	},
 	{
 		rus: '▼',
 		rusShift: '▼',
 		eng: '▼',
 		engShift: '▼',
-		codeKey: 'ArrowDown'
+		codeKey: 'ArrowDown',
+		ArrowDown: '40'
 	},
 	{
 		rus: '►',
 		rusShift: '►',
 		eng: '►',
 		engShift: '►',
-		codeKey: 'ArrowRight'
+		codeKey: 'ArrowRight',
+		ArrowRight: '39'
 	},
 	{
 		rus: 'Ctrl',
 		rusShift: 'Ctrl',
 		eng: 'Ctrl',
 		engShift: 'Ctrl',
-		codeKey: 'ControlRight'
+		codeKey: 'ControlRight',
+		ControlRight: '17'
 	},
 ]
